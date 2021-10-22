@@ -69,5 +69,5 @@ public class GDichTTe extends GDich {
 			ds[i].in();
 		}
 	}
-
+	còn lại 23/10 viết tiếp
 }
