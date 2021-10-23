@@ -46,28 +46,40 @@ public class GDichTTe extends GDich {
 		System.out.println("\nLoai tien: " + loai);
 		System.out.println("\nTi gia tien: " + tgia);
 	}
+	//ham tinh tien
+	public boolean thanhTien() {
+		float Tien = sluong * dgia * tgia;
+		if((Tien >100000) && loai == 'V') {
+			return true;
+		}
+		return false;
+	}
 	
 	public static void main(String[] args) {
-		GDichTTe ds[];
-		int n;
 		Scanner sc = new Scanner(System.in);
-		System.out.println("\nNhap so luong giao dich ban muon quan li: ");
-		n=sc.nextInt();
-		
-		ds=new GDichTTe[n];
-		
-		//cap phat bo nho
-		for(int i=0;i<n;i++) ds[i] = new GDichTTe();
-		
+		System.out.println("\nDanh sach ban co bao nhieu doi tuong: ");
+		int n = sc.nextInt();
+		sc.nextLine();
+		int c;
+		GDich ds[] = new GDich[n];
 		for(int i=0;i<n;i++) {
-			System.out.println("\nNhap thong tin giao dich cua ban: ");
+			System.out.println("\nBan muon Giao dich hay Giao dich tien te thu " +(i+1)+"\n1. Giao dich\n2. Giao dich tien te");
+			c=sc.nextInt();
+			if(c==1) ds[i] = new GDich();
+			else ds[i] = new GDichTTe();
+			
 			ds[i].nhap();
 		}
 		
 		for(int i=0;i<n;i++) {
-			System.out.println("\nThong tin giao dich cua ban: ");
+			System.out.println("\nThong tin doi tuong thu: "+(i+1));
 			ds[i].in();
 		}
+		
+		for(int i=0;i<n;i++) {
+			if((ds[i].getTthai() == true) && (ds[i].thanhTien())) {
+				System.out.println("\nMa giao dich cua doi tuong thu "+(i+1)+": "+ds[i].getmgd());
+			}
+		}
 	}
-	còn lại 23/10 viết tiếp
 }
