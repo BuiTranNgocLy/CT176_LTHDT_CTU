@@ -33,6 +33,8 @@ public class GDich {
 		hten=sc.nextLine();
 		System.out.println("\nNhap thoi gian giao dich(dd/mm/yyyy): ");
 		ngay=sc.nextLine();
+		System.out.println("\nNhap trang thai giao dich: ");
+		tthai=sc.nextBoolean();
 	}
 	
 	//ham in
@@ -41,8 +43,21 @@ public class GDich {
 		System.out.println("\nHo ten nguoi giao dich: " + hten);
 		System.out.println("\nThoi giao giao dich: " + ngay);
 	}
-
-
+	
+	//ham lay mgd
+	public int getmgd() {
+		return mgd;
+	}
+	
+	//ham lay trang thai
+	public boolean getTthai() {
+		return true;
+	}
+	
+	public boolean thanhTien() {
+		return false;
+	}
+	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		GDich gd1 = new GDich();
@@ -55,4 +70,6 @@ public class GDich {
 		gd2.in();
 	
 	}
+
+	
 }
